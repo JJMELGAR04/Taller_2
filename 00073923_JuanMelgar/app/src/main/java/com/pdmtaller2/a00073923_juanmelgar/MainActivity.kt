@@ -11,6 +11,9 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.lifecycle.viewmodel.compose.viewModel
+import com.pdmtaller2.a00073923_juanmelgar.Navigation.AppNavigation
+import com.pdmtaller2.a00073923_juanmelgar.ViewModel.CartViewModel
 import com.pdmtaller2.a00073923_juanmelgar.ui.theme._00073923_JuanMelgarTheme
 
 class MainActivity : ComponentActivity() {
@@ -19,29 +22,12 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             _00073923_JuanMelgarTheme {
+                val cartViewModel: CartViewModel = viewModel()
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Android",
-                        modifier = Modifier.padding(innerPadding)
-                    )
+                    AppNavigation(cartViewModel = cartViewModel, modifier = Modifier.padding(innerPadding))
                 }
             }
         }
     }
 }
 
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
-
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    _00073923_JuanMelgarTheme {
-        Greeting("Android")
-    }
-}
