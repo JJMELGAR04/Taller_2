@@ -29,8 +29,8 @@ fun BottomBar(navController: NavController) {
 
         // Item para la pantalla de búsqueda
         NavigationBarItem(
-            selected = navBackStackEntry.value?.destination?.route == Routes.RestaurantMenu,  // Nueva ruta para buscar
-            onClick = { navController.navigate(Routes.RestaurantMenu) }, // Navegar a la pantalla de búsqueda
+            selected = navBackStackEntry.value?.destination?.route == Routes.SearchScreen,  // Nueva ruta para buscar
+            onClick = { navController.navigate(Routes.SearchScreen) }, // Navegar a la pantalla de búsqueda
             icon = { Icon(Icons.Default.Search, contentDescription = "Buscar") },
             label = { Text("Buscar") }
         )

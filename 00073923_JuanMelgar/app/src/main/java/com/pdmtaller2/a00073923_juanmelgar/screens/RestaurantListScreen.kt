@@ -32,7 +32,7 @@ fun RestaurantListScreen(navController: NavController) {
     val categories = restaurants.flatMap { it.categories }.distinct()
 
     Scaffold(
-        topBar = { TopAppBar(title = { Text("Lista de Restaurantes") }) },
+        topBar = { TopAppBar(title = { Text("Restaurantes") }) },
         bottomBar = { BottomBar(navController) } // Añadir BottomBar aquí
     ) { padding ->
         LazyColumn(modifier = Modifier.padding(padding).padding(16.dp)) {

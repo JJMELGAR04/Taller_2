@@ -6,13 +6,15 @@ import kotlinx.serialization.Serializable
 object RestaurantListScreen
 
 @Serializable
-data class RestaurantMenuScreen(val restaurantId: Int)
+data class RestaurantMenu(val restaurantId: Int)
 
 @Serializable
 object OrdersScreen
 
 object Routes {
-    const val RestaurantList = "restaurantList"
+    const val RestaurantList = "restaurant_list_screen"
     const val RestaurantMenu = "menu/{restaurant}"
+    const val SearchScreen = "search_screen"
     const val Orders = "orders"
+    const val MainScreen = "main_screen"
 }
